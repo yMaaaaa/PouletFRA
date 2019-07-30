@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<!-- R G B-->
+		<style>
+			body {
+				background-color: #aaf0fa;
+				margin: 0;
+				overflow: hidden;
+				border: 1px red solid;
+			}
+			p{
+				color:#FF0000;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Le super site web </h1>
+		<h2>Le devellopement web en HTML</h2>
+		<p id="x">Lorem ipsum blablabla</p>
+		<p id="y">Lorem ipsum blablabla</p>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js"></script>
+		<script>
+
+			var camera, scene, renderer;
+			var geometry, material, mesh;
+
+			function init() {
+
+				camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 10 );
+				camera.position.z = 3;
+
+				scene = new THREE.Scene();
+				scene.background = new THREE.Color( 0xffffff );
+
+				geometry = new THREE.SphereGeometry( 1 );
+				material = new THREE.MeshBasicMaterial( { color: 0x000000, wireframe: true } );
+
+				mesh = new THREE.Mesh( geometry, material );
+				scene.add( mesh );
+
+				renderer = new THREE.WebGLRenderer( { antialias: true } );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				document.body.appendChild( renderer.domElement );					
+			}
+
+			function animate( time ) {
+				var rx = Math.random() / 10000;
+				var ry = Math.random() / 10000;
+				
+				document.getElementById("x").innerHTML = "rotation x : " + rx;	
+				document.getElementById("y").innerHTML = "rotation y : " + ry;	
+
+				mesh.rotation.x = time * rx;
+				mesh.rotation.y = time * ry;
+
+				renderer.render( scene, camera );
+				requestAnimationFrame( animate );
+
+			}
+
+			init();
+			requestAnimationFrame( animate );
+
+		</script>
+	</body>
+</html>
