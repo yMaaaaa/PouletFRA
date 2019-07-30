@@ -1,7 +1,0 @@
-file:///C:/Users/matt.douteaud/Documents/test.html#contact
-
-file:///C:/Users/matt.douteaud/Documents/test.html#home
-
-file:///C:/Users/matt.douteaud/Documents/test.html#news
-
-file:///C:/Users/matt.douteaud/Documents/test.html#Lorem Ipsum blablabla
