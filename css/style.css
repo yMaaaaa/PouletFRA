@@ -1,0 +1,11 @@
+body{
+	background-image:url('../img/background.jpg');
+	background-repeat:no-repeat;
+	background-position:center top;
+}
+
+h1 {
+	color: red;
+	font-family: verdana;
+	font-size : 300%;
+}
